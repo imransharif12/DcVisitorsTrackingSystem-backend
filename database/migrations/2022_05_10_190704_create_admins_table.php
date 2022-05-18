@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApplicableDocumentsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateApplicableDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('applicable_documents', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('name')->nullable();
+            $table->string('f_name')->nullable();
+            $table->string('l_name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('code');
+            $table->enum('type', ["admin","superadmin"]);
             $table->tinyInteger('status')->comment('1=active 0=deactive')->default(1);
             $table->timestamps();
         });
@@ -29,6 +34,6 @@ class CreateApplicableDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('applicable_documents');
+        Schema::dropIfExists('admins');
     }
 }

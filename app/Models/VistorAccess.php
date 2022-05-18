@@ -11,5 +11,6 @@ class VistorAccess extends Model
     protected $fillable = [
         'v_f_name',
         'v_l_name',
+        'date',
     ];
 }

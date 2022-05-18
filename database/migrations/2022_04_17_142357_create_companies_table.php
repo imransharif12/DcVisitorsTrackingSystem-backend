@@ -16,14 +16,16 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->text('company');
-            $table->text('position');
+            $table->text('company')->nullable();
+            $table->text('position')->nullable();
             $table->string('email')->unique();
+            $table->string('password')->nullable();
             $table->string('phone');
-            $table->longText('address');
-            $table->string('city');
-            $table->string('zipcode');
-            $table->string('country');
+            $table->longText('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('zipcode')->nullable();
+            $table->string('country')->nullable();
+            $table->enum('type', ["simple","superadmin"]);
             $table->tinyInteger('status')->comment('1=active 0=deactive')->default(1);
             $table->timestamps();
         });

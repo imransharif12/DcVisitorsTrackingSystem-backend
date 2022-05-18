@@ -15,8 +15,8 @@ class CreateVerficationCriminalRecordsTable extends Migration
     {
         Schema::create('verfication_criminal_records', function (Blueprint $table) {
             $table->id();
-            $table->integer('verfication_id');
-            $table->string('criminal_name');
+            $table->integer('user_id');
+            $table->string('criminal_name')->nullable();
             $table->tinyInteger('status')->comment('1=active 0=deactive')->default(1);
             $table->timestamps();
         });

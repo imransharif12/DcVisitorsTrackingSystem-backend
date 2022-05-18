@@ -18,6 +18,7 @@ class CreateVistorAccessesTable extends Migration
             $table->integer('user_id');
             $table->string('v_f_name')->nullable();
             $table->string('v_l_name')->nullable();
+            $table->date('date')->nullable();
             $table->tinyInteger('status')->comment('1=active 0=deactive')->default(1);
             $table->timestamps();
         });

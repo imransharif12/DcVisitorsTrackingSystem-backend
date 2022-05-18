@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ReportedAuthorizedPerson extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'f_name',
+        'l_name',
+        'badge_number',
+        'signature',
+    ];  
 }

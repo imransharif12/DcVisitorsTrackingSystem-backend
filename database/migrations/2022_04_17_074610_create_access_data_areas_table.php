@@ -15,7 +15,7 @@ class CreateAccessDataAreasTable extends Migration
     {
         Schema::create('access_data_areas', function (Blueprint $table) {
             $table->id();
-            $table->integer('access_id');
+            $table->integer('user_id');
             $table->string('name')->nullable();
             $table->tinyInteger('status')->comment('1=active 0=deactive')->default(1);
             $table->timestamps();

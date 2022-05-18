@@ -7,17 +7,32 @@ use Illuminate\Support\Facades\Validator;
 class GenericValidations
 {
 
-    public static function verfication($request)
+    public static function validation($request)
     {
         $validator = Validator::make(
             $request->all(),
             [
-                'verification_id' => 'exists:verfications,id',
+                'user_id' => 'exists:users,id',
             ],
             [
-                'verification_id.exists' => 'Invalid Verfication Id',
+                'user_id.exists' => 'Invalid User Id',
             ]
         );
+        if ($validator->fails()) {
+            return $validator;
+        }
+    }
+
+     public static function changeStatus($request)
+    {
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'status' => 'required',
+        ],
+        [
+            'id.required' => 'User Id is required!',
+            'status.required' => 'Status is required!',
+        ]);
         if ($validator->fails()) {
             return $validator;
         }

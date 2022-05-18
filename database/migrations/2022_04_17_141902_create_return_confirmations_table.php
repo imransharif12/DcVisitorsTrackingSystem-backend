@@ -15,6 +15,7 @@ class CreateReturnConfirmationsTable extends Migration
     {
         Schema::create('return_confirmations', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('f_name')->nullable();
             $table->string('l_name')->nullable();
             $table->string('confirmation_signature')->nullable();

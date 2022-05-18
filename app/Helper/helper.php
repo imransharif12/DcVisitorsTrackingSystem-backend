@@ -1,5 +1,18 @@
 <?php
 
+ function baseUrl()
+{
+    if(url('/')=='https://iuvax-testing-backend-new.crunchyapps.com')
+    {
+      return $url="http://iuvax-testing.crunchyapps.com";
+    }else if (url('/')=='http://iuvax-backend-new.crunchyapps.com') {
+       return $url="http://iuvax.crunchyapps.com";
+    }
+    else{
+        return $url='http://localhost:8080';
+    }
+}
+
 function sendResponce($code,$message,$data)
 {
     $response = [

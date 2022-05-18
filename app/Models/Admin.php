@@ -7,18 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Company extends Authenticatable
+class Admin extends Authenticatable
 {
     use HasFactory,HasApiTokens;
-    
+
     protected $fillable = [
-        'company',
-        'position',
-        'email',
+        'f_name',
+        'l_name',
         'phone',
-        'address',
-        'city',
-        'zipcode',
-        'country',
+        'email',
+        'type',
     ];
 }

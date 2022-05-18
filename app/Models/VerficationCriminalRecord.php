@@ -10,5 +10,6 @@ class VerficationCriminalRecord extends Model
     use HasFactory;
     protected $fillable = [
         'criminal_name',
+        'user_id',
     ];
 }

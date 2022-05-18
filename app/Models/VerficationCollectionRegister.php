@@ -10,5 +10,6 @@ class VerficationCollectionRegister extends Model
     use HasFactory;
     protected $fillable = [
         'collection_name',
+        'user_id',
     ];
 }

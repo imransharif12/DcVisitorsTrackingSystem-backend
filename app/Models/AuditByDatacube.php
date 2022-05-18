@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class AuditByDatacube extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'f_name',
+        'l_name',
+        'auditor_signature',
+        'signature_date',
+    ];  
 }

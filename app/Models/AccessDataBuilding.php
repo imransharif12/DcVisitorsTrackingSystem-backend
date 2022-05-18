@@ -10,6 +10,7 @@ class AccessDataBuilding extends Model
     use HasFactory;
     protected $fillable = [
         'building_name',
+        'user_id',
     ];  
 
 }
